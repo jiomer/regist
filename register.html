@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+	<title>Rigister One</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="image/vnd.microsoft.icon" href="./img/favicon.png" rel="shortcut icon">
+	<link href="css/bootstrap/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<script language = "javascript">
+	function checkform()//使用JS来验证用户输入是否符合规范
+	{
+    		if(myform.username.value == "")//昵称不能为空
+    		{
+    			alert("昵称不能为空！");
+    			myform.username.focus();
+    			return false;
+    		}
+    		if(!myform.username.value.replace(/[^\a-\z\A-\Z]/g,''))//使用正则表达式来判断昵称
+    		{
+    			alert("昵称不符合规范！");
+    			myform.username.focus();
+    			return false;
+    		}
+    		if(myform.username.value.length < 4 || myform.username.value.length > 8)//当用户输入的昵称小于4或者大于8时
+    		{
+    			alert("昵称不符合规范！");
+    			myform.username.focus();
+    			return false;
+    		}
+    		if(myform.email.value == "")//邮箱不能为空
+    		{
+    			alert("邮箱必须填写！");
+    			myform.email.focus();
+    			return false;
+    		}
+    		if(myform.email.value.length < 12)//邮箱不能少于12个字符，否则不符合规范
+    		{
+    			alert("邮箱不符合规范！");
+    			myform.email.focus();
+    			return false;
+    		}
+    		if(myform.password.value == "")//密码不能为空
+    		{
+    			alert("密码不能为空！");
+    			myform.password.focus();
+    			return false;
+    		}
+    		if(myform.password2.value == "")//密码不能为空
+    		{
+    			alert("密码不能为空！");
+    			myform.password2.focus();
+    			return false;
+    		}
+    		if(!myform.password2.value.replace(/[^\a-\z\A-\Z]/g,''))//使用正则表达式来判断密码
+    		{
+    			alert("密码不符合规范！");
+    			myform.password2.focus();
+    			return false;
+    		}
+    		if(myform.password2.value.length < 6)//如果密码小于6位
+    		{
+    			alert("密码不能少于6位！");
+    			myform.password2.focus();
+    			return false;
+    		}
+    		if(myform.password.value != myform.password2.value)//判断两次输入的密码是否一致
+    		{
+    			alert("两次输入的密码不一致！");
+    			myform.password2.focus();
+    			return false;
+    		}if(myform.regimage.value == "")//昵称不能为空
+    		{
+    			alert("验证码不能为空！");
+    			myform.regimage.focus();
+    			return false;
+    		}
+    	}
+    </script>
+	
+</head>
+<body class="templatemo-bg-gray">
+	<div class="container">
+		<div class="col-md-12">
+			<h1 class="margin-bottom-15">注册系统</h1>
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" name="myform" action="reg.php" onsubmit = "return checkform();" method="post">				
+		        <div class="form-group">
+		          <div class="col-xs-12">		            
+		            <div class="control-wrapper">
+		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
+		            	<input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+		            </div>		            	            
+		          </div>              
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+		            	<input type="password" class="form-control" id="password" name="password" placeholder="密码">
+		            </div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="password2" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+		            	<input type="password" class="form-control" id="password2" name="password2" placeholder="再次输入密码">
+		            </div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="email" class="control-label fa-label"><i class="fa glyphicon-envelope fa-medium"></i></label>
+		            	<input type="email" class="form-control" id="email" name="email" placeholder="邮箱">
+		            </div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-6">
+		          	<div class="control-wrapper input-group">
+		            	<label for="image" class=" control-label fa-label">
+		            	    <i class="fa glyphicon-asterisk fa-medium"></i>
+		            	</label>
+		            	<input type="text" class="form-control" id="regimage" name="regimage" placeholder="验证码">
+		            	<span class="input-group-btn">
+		            	<img src = 'img.php' />
+		            	</span>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-5">
+		          	<div class="control-wrapper">
+		          		<input type="submit" name="submit" value="注册" class="btn btn-info">
+		          	</div>
+		          </div>
+		        </div>
+		        <hr>
+		      </form>
+		      <div class="text-center">
+	
+		</div>
+	</div>
+	</div>
+</body>
+</html>

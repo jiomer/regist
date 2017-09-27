@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>这不是404页面</title>
+		<link href="css/404.css" rel="stylesheet" />
+		<link type="image/vnd.microsoft.icon" href="./img/favicon.png" rel="shortcut icon" />
+		<script>
+			var num=10;
+			function redirect(){
+				num--;
+				document.getElementById("num").innerHTML=num;
+				if(num<0){
+					document.getElementById("num").innerHTML=0;
+					//location.href="http://199604.com";
+					document.location="./login.html";
+					}
+				}
+			setInterval("redirect()", 1000);
+		</script>
+	</head>
+	<body>
+		<div class="whole">
+			<img src="img/back.jpg" />
+	    	<div class="mask"></div>
+		</div>
+		<div class="b">
+			<p>
+				我一直问自己为什么要努力...<br />
+				但是这个页面告诉我,你的人生出错了...<br />
+	            <span id="num"></span>秒后自动跳转到主页
+			</p>
+			<a class="new" href="./login.html">Go to SunLife</a>
+	        <a class="about" href="./login.html">Login</a>
+		</div>
+	</body>
+</html>

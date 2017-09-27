@@ -1,0 +1,15 @@
+.icon-myuser{
+	background:url('../img/user.png') no-repeat center center;
+}
+.icon-mymenu{
+	background:url('../img/menu2.png') no-repeat center center;
+}
+.icon-myman{
+	background:url('../img/man.png') no-repeat center center;
+}
+.icon-myedit{
+	background:url('../img/myedit.png') no-repeat center center;
+}
+.icon-loginout{
+	background:url('../img/loginout.png') no-repeat center center;
+}

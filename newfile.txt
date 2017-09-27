@@ -1,0 +1,1 @@
+http://git.oschina.net/helloz/regist/blob/master/register.php
